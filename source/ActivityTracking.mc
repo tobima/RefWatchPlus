@@ -59,6 +59,21 @@ module ActivityTracking {
         actRecSession = null;
     }
 
+    function pauseTracking() {
+        var stopped = false;
+        
+        do {
+           	stopped = actRecSession.stop();
+        } while(stopped == false);
+    }
+
+    function unpauseTracking() {
+        var started = false;
+            do {
+                started = actRecSession.start();
+        } while(!started);
+    }
+
     function getCurHeartRate() {
         var info = Act.getActivityInfo().currentHeartRate;
         if (info != null) {
