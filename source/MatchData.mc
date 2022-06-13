@@ -84,6 +84,7 @@ module MatchData {
             stopMatch();
             return;
         }
+        Tracker.endPeriod();
     }
 
     function isPlayingPeriod() {
